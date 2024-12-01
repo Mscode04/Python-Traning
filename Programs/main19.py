@@ -1,14 +1,14 @@
 #Pattern 1
 
-# for x in range(6):
-#     for y in range(x):
-#         print('*', end='')
-#     print()
-# for x in range(5,0,-1):
-#     for y in range(x):
-#         print('*', end='')
-#     print()
-#
+for x in range(6):
+    for y in range(x):
+        print('*', end='')
+    print()
+for x in range(5,0,-1):
+    for y in range(x):
+        print('*', end='')
+    print()
+
 
 
 #Pattern2
@@ -29,8 +29,8 @@
 #         print(" ", end='')
 
 
-#Pattern4
-for x in range(6,0,-1):
-    for y in range(x,7):
-        print(y, end='')
-    print()
+# #Pattern4
+# for x in range(6,0,-1):
+#     for y in range(x,7):
+#         print(y, end='')
+#     print()

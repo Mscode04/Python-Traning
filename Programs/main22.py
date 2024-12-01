@@ -1,4 +1,4 @@
-num=1
+num=7
 prime=True
 if num<=1:
     prime=False
