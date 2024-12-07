@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm() {
+            var firstName = document.getElementsByTagName("input")[0].value;
+            if (firstName.length == 0 || firstName.length > 30 || !/^[A-Za-z]+$/.test(firstName)) {
+                alert("Please enter a valid first name (max 30 characters, A-Z).");
+                return false;
+            }
+
+
+            var lastName = document.getElementsByTagName("input")[1].value;
+            if (lastName.length == 0 || lastName.length > 30 || !/^[A-Za-z]+$/.test(lastName)) {
+                alert("Please enter a valid last name (max 30 characters, A-Z).");
+                return false;
+            }
+
+            var day = document.getElementsByTagName("select")[0].value;
+            var month = document.getElementsByTagName("select")[1].value;
+            var year = document.getElementsByTagName("select")[2].value;
+            if (day == "1" || month == "1" || year == "1") {
+                alert("Please select a valid date of birth.");
+                return false;
+            }
+
+            var email = document.getElementsByTagName("input")[3].value;
+            if (email.length == 0 || !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            var mobileNumber = document.getElementsByTagName("input")[4].value;
+            if (mobileNumber.length != 10 || !/^\d{10}$/.test(mobileNumber)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return false;
+            }
+
+
+            var gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                alert("Please select your gender.");
+                return false;
+            }
+
+            var address = document.getElementsByTagName("textarea")[0].value;
+            if (address.length == 0) {
+                alert("Please enter your address.");
+                return false;
+            }
+
+
+            var city = document.getElementsByTagName("input")[7].value;
+            if (city.length == 0 || city.length > 30 || !/^[A-Za-z]+$/.test(city)) {
+                alert("Please enter a valid city name (max 30 characters, A-Z).");
+                return false;
+            }
+
+            var pinCode = document.getElementsByTagName("input")[8].value;
+            if (pinCode.length != 6 || !/^\d{6}$/.test(pinCode)) {
+                alert("Please enter a valid 6-digit pin code.");
+                return false;
+            }
+
+
+            var state = document.getElementsByTagName("input")[9].value;
+            if (state.length == 0 || state.length > 30 || !/^[A-Za-z]+$/.test(state)) {
+                alert("Please enter a valid state name (max 30 characters, A-Z).");
+                return false;
+            }
+
+
+            var hobbies = document.querySelectorAll('input[type="checkbox"]:checked');
+            if (hobbies.length == 0) {
+                alert("Please select at least one hobby.");
+                return false;
+            }
+
+ 
+            var qualificationInputs = document.querySelectorAll('input[type="text"]');
+            for (var i = 0; i < qualificationInputs.length; i++) {
+                if (qualificationInputs[i].value.length == 0) {
+                    alert("Please fill all qualification details.");
+                    return false;
+                }
+            }
+
+
+            var courseApplied = document.querySelector('input[name="course"]:checked');
+            if (!courseApplied) {
+                alert("Please select a course applied for.");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" onsubmit="return validateForm()">
+        <table>
+            <caption>Student Registration Form</caption>
+            <tr>
+                <td>FIRST NAME</td>
+                <td><input type="text"> &nbsp (max 30 Characters ans A-Z)</td>
+            </tr>
+            <tr>
+                <td>LAST NAME</td>
+                <td><input type="text"> &nbsp (max 30 Characters ans A-Z)</td>
+            </tr>
+            <tr>
+                <td>DATE OF BIRTH</td>
+                <td><select name="" id="">
+                        <option value="1">Day: </option>
+                    </select>
+                    <select name="" id="">
+                        <option value="1">Month: </option>
+                    </select>
+                    <select name="" id="">
+                        <option value="1">Year: </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>EMAIL</td>
+                <td><input type="email"></td>
+            </tr>
+            <tr>
+                <td>MOBILE NUMBER</td>
+                <td><input type="text"> &nbsp; (10 digit number)</td>
+            </tr>
+            <tr>
+                <td>GENDER</td>
+                <td>Male <input type="radio" name="gender" value="Male"> Female <input type="radio" name="gender" value="Female"></td>
+            </tr>
+            <tr>
+                <td>ADDRESS</td>
+                <td><textarea name="" id="" rows="5" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td>CITY</td>
+                <td><input type="text"> &nbsp (max 30 Characters ans A-Z)</td>
+            </tr>
+            <tr>
+                <td>PIN CODE</td>
+                <td><input type="text"> &nbsp (6 digit number)</td>
+            </tr>
+            <tr>
+                <td>STATE</td>
+                <td><input type="text"> &nbsp (max 30 Characters ans A-Z)</td>
+            </tr>
+            <tr>
+                <td>COUNTRY</td>
+                <td><select name="" id="">
+                        <option value="">India</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>HOBBIES</td>
+                <td>
+                    Drawing <input type="checkbox">
+                    Singing <input type="checkbox">
+                    Dancing <input type="checkbox">
+                    Sketching <input type="checkbox"> <br>
+                    Other <input type="checkbox">
+                    <input type="text" name="" id="">
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>QUALIFICATION</td>
+                <td>SNO.</td>
+                <td>Examination</td>
+                <td>Board</td>
+                <td>Percentage</td>
+                <td>Year of Passing</td>
+            </tr>
+            <tr>
+                <td rowspan="4"></td>
+                <td>1</td>
+                <td>Class X</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Class XII</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Graduation</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Post Graduation</td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td>(10 Char Max)</td>
+                <td colspan="2">(Upto 2 Decimal)</td>
+            </tr>
+            <tr>
+                <td>COURSE APPLIED FOR</td>
+                <td>PHP <input type="radio" name="course" value="PHP"></td>
+                <td>Python <input type="radio" name="course" value="Python"></td>
+                <td>Java <input type="radio" name="course" value="Java"></td>
+                <td>Digital Marketing <input type="radio" name="course" value="Digital Marketing"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2"><input type="submit" value="SUBMIT"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
